@@ -2,245 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WorkWave - Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuvia Music Streaming</title>
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --primary-color: #ffffff;
+      --accent-color: #440000;
+      --highlight-color: #ff7a00;
+      --text-color: #eeeeee;
+      --background-color: #1a0000;
+    }
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Inter', sans-serif;
-      background: #1A003D;
-      color: #fff;
-      line-height: 1.6;
     }
-    header {
-      background: #2E005E;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      font-size: 12px;
     }
-    header .logo {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: #FFD94D;
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.0&auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+      z-index: -1;
     }
-    nav a {
-      margin-left: 1rem;
-      color: #fff;
-      text-decoration: none;
-    }
-    .hero {
+
+    .title,
+    h1,
+    .description,
+    form {
       text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, #6221A4, #2E005E);
+      max-width: 400px;
+      margin: 0 auto;
     }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+
+    .title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--highlight-color);
+      margin-bottom: 0.3rem;
     }
-    .hero p {
-      font-size: 1.2rem;
-      color: #D6B1FD;
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
     }
-    .hero button {
-      margin-top: 2rem;
-      background: linear-gradient(to right, #F85FD7, #FFC34E);
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #000;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .section {
-      padding: 4rem 2rem;
-      background-color: #250050;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2rem;
+
+    .description {
+      font-size: 0.9rem;
+      opacity: 0.9;
       margin-bottom: 1.5rem;
     }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .feature {
-      background-color: #3A0E68;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #FFD94D33;
-    }
-    .feature img {
-      width: 100%;
-      max-width: 200px;
-      margin: 0 auto 1rem;
-      display: block;
-      border-radius: 8px;
-    }
-    .cta-section {
-      background-color: #6221A4;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    .cta-section h3 {
-      font-size: 2rem;
+
+    .form-group {
       margin-bottom: 1rem;
+      text-align: left;
     }
-    .cta-section p {
-      margin-bottom: 2rem;
-      color: #D6B1FD;
-    }
-    .cta-section a {
-      background: linear-gradient(to right, #F85FD7, #FFC34E);
-      color: #000;
-      text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .register-button {
-      margin: 2rem auto;
-      display: inline-block;
-      background: linear-gradient(to right, #F85FD7, #FFC34E);
-      color: #000;
-      padding: 1rem 2rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-    .testimonial {
-      background: #3A0E68;
-      padding: 2rem;
-      margin: 1rem auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #FFD94D22;
-      max-width: 600px;
-      display: none;
-    }
-    .testimonial.active {
+
+    .form-group label {
       display: block;
-      animation: fade 1s ease-in-out;
+      margin-bottom: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--text-color);
+      opacity: 0.9;
     }
-    @keyframes fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
+
+    .form-control {
+      width: 100%;
+      padding: 0.6rem 0.9rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: var(--text-color);
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
     }
-    footer {
-      background: #1A003D;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #A88DCB;
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--highlight-color);
+      box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.3);
+    }
+
+    .register-btn {
+      background-color: var(--highlight-color);
+      color: var(--primary-color);
+      border: none;
+      padding: 0.8rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .register-btn:hover {
+      background-color: #e86e00;
+      transform: translateY(-2px);
     }
   </style>
 </head>
 <body>
+  <div class="title">Music Streaming Platform</div>
+  <h1>Nuvia Music Streaming</h1>
+  <p class="description">Your favourite music, all in one place.</p>
 
-  <header>
-    <div class="logo">WorkWave</div>
-    <nav>
-      <a href="#how-it-works">Packages</a>
-      <a href="/signup.html">Register</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Your Daily Earnings, Simplified</h1>
-    <p>Choose a package, complete simple daily tasks, and earn consistent income effortlessly. It’s that easy.</p>
-    <button onclick="location.href='/signup.html'">Get Started</button>
-  </section>
-
-  <section class="section" id="how-it-works">
-    <h2>WorkWave Packages</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>ICON PACKAGE - ₦10,000</h3>
-        <ul style="text-align:left">
-          <li>🎉 Welcome Bonus: ₦9,000</li>
-          <li>🤖 AI Automation: ₦600</li>
-          <li>📅 Daily Bonus Claim: ₦100</li>
-          <li>🧠 NFT Mint Task: ₦500</li>
-          <li>📸 Snap & Earn: ₦3,000</li>
-          <li>🎓 Guildline Bonus: ₦9,000</li>
-          <li>🛠️ Auto Guildline: ₦100</li>
-        </ul>
-        <p><strong>Earn up to ₦1,200 Daily</strong></p>
-      </div>
-      <div class="feature">
-        <h3>TITAN PACKAGE - ₦20,000</h3>
-        <ul style="text-align:left">
-          <li>🎉 Welcome Bonus: ₦20,000</li>
-          <li>🤖 AI Automation: ₦2,500</li>
-          <li>📅 Daily Bonus Claim: ₦500</li>
-          <li>🧠 NFT Mint Task: ₦2,000</li>
-          <li>📸 Snap & Earn: ₦3,000</li>
-          <li>🎓 Guildline Bonus: ₦17,000</li>
-          <li>🛠️ Auto Guildline: ₦500</li>
-        </ul>
-        <p><strong>Earn up to ₦5,000 Daily</strong></p>
-      </div>
+  <form id="signupForm">
+    <div class="form-group">
+      <label for="fullname">Fullname</label>
+      <input type="text" id="fullname" class="form-control" required />
     </div>
-    <a href="/signup.html" class="register-button">Register Now</a>
-  </section>
 
-  <section class="section">
-    <h2>Why Choose WorkWave?</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Flexible Tasks</h3>
-        <p>Complete tasks on your schedule. No pressure, just daily rewards.</p>
-        <img src="./assets/images/IMG_20250711_233013_425.jpg" alt="Task Visual 1">
-      </div>
-      <div class="feature">
-        <h3>Real Earnings, Fast Payouts</h3>
-        <p>Withdraw your earnings daily once you hit ₦20,000 — no hidden conditions.</p>
-        <img src="./assets/images/IMG_20250711_233121_430.jpg" alt="Task Visual 2">
-      </div>
+    <div class="form-group">
+      <label for="username">Preferred Username</label>
+      <input type="text" id="username" class="form-control" required />
     </div>
-    <a href="/signup.html" class="register-button">Register Now</a>
-  </section>
 
-  <section class="section">
-    <h2>Success Stories</h2>
-    <div id="testimonial-rotator">
-      <div class="testimonial active"><strong>Chidera – Lagos</strong><br>Earned ₦45,000 in her first week with the Titan package. “It’s fast and real!”</div>
-      <div class="testimonial"><strong>Emmanuel – Abuja</strong><br>Withdraws ₦20,000 every 4 days. “Zero stress. Daily bonuses are my favorite!”</div>
-      <div class="testimonial"><strong>Grace – Port Harcourt</strong><br>Started with Icon, upgraded to Titan. “The growth is real.”</div>
-      <div class="testimonial"><strong>Timi – Ibadan</strong><br>Earned ₦30,000 within 6 days. “Just tasks and steady pay.”</div>
-      <div class="testimonial"><strong>Ada – Enugu</strong><br>Used first payout to sort bills. “So grateful I joined.”</div>
-      <div class="testimonial"><strong>Joseph – Benin</strong><br>Titan helped me replace my 9-5 salary. “No joke.”</div>
-      <div class="testimonial"><strong>Sandra – Owerri</strong><br>Consistently earning ₦5k daily. “The platform works.”</div>
-      <div class="testimonial"><strong>Bola – Akure</strong><br>₦60,000 withdrawn in 2 weeks. “This is my side hustle now.”</div>
-      <div class="testimonial"><strong>Kemi – Ilorin</strong><br>Joined with Icon, upgrading next week. “It’s sustainable.”</div>
-      <div class="testimonial"><strong>Uche – Uyo</strong><br>Withdraws weekly. “Clean system. I recommend it.”</div>
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="Email" id="Email" class="form-control" required />
     </div>
-    <a href="/signup.html" class="register-button">Register Now</a>
-  </section>
 
-  <section class="cta-section" id="register">
-    <h3>Ready to Earn Daily?</h3>
-    <p>Select a package, start small or go big. Your earnings start from day one.</p>
-    <a href="/signup.html">Register Now</a>
-  </section>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" required />
+    </div>
 
-  <footer>
-    &copy; 2025 WorkWave. All rights reserved.
-  </footer>
+    <button type="submit" class="register-btn">Register Now</button>
+  </form>
 
   <script>
-    const testimonials = document.querySelectorAll('.testimonial');
-    let current = 0;
-    setInterval(() => {
-      testimonials[current].classList.remove('active');
-      current = (current + 1) % testimonials.length;
-      testimonials[current].classList.add('active');
-    }, 8000); // rotates every 8 seconds
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.location.href = 'payment.html';
+    });
   </script>
 </body>
 </html>
