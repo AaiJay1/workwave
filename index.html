@@ -2,161 +2,352 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nuvia Music Streaming</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorkWave - Earn Daily Online in Nigeria | ICON & TITAN Packages</title>
 
-    :root {
-      --primary-color: #ffffff;
-      --accent-color: #440000;
-      --highlight-color: #ff7a00;
-      --text-color: #eeeeee;
-      --background-color: #1a0000;
+  <!-- ✅ SEO Meta Description -->
+  <meta name="description" content="Join WorkWave and start earning daily by completing simple online tasks in Nigeria. Choose from ICON or TITAN packages and get paid up to ₦5,000 per day. Fast payouts. No referrals required.">
+
+  <!-- ✅ SEO Keywords -->
+  <meta name="keywords" content="earn online in Nigeria, daily income jobs, affiliate earnings Nigeria, WorkWave packages, legit online jobs, no referral earnings, daily payout, ICON package, TITAN package">
+
+  <!-- ✅ Open Graph (for social sharing) -->
+  <meta property="og:title" content="WorkWave – Daily Online Earnings in Nigeria">
+  <meta property="og:description" content="Earn up to ₦5,000 daily completing simple tasks. Choose ICON or TITAN package. Fast withdrawals, no referrals needed.">
+  <meta property="og:url" content="https://workwave.vercel.app">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://workwave.vercel.app/assets/images/IMG_20250711_233013_425.jpg">
+
+  <!-- ✅ Mobile SEO Enhancements -->
+  <meta name="theme-color" content="#6221A4">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #1A003D;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background: #2E005E;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #FFD94D;
+    }
+    nav a {
+      margin-left: 1rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #6221A4, #2E005E);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #D6B1FD;
+    }
+    .hero button {
+      margin-top: 2rem;
+      background: linear-gradient(to right, #F85FD7, #FFC34E);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #000;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .section {
+      padding: 4rem 2rem;
+      background-color: #250050;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .feature {
+      background-color: #3A0E68;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #FFD94D33;
+    }
+    .feature img {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto 1rem;
+      display: block;
+      border-radius: 8px;
+    }
+    .cta-section {
+      background-color: #6221A4;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .cta-section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      margin-bottom: 2rem;
+      color: #D6B1FD;
+    }
+    .cta-section a {
+      background: linear-gradient(to right, #F85FD7, #FFC34E);
+      color: #000;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .register-button {
+      margin: 2rem auto;
+      display: inline-block;
+      background: linear-gradient(to right, #F85FD7, #FFC34E);
+      color: #000;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .testimonial {
+      background: #3A0E68;
+      padding: 2rem;
+      margin: 1rem auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #FFD94D22;
+      max-width: 600px;
+      display: none;
+    }
+    .testimonial.active {
+      display: block;
+      animation: fade 1s ease-in-out;
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    footer {
+      background: #1A003D;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #A88DCB;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .dev-credit-subtle {
+      position: fixed;
+      bottom: 22px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #bbb;
+      padding: 4px 8px;
+      font-size: 0.72rem;
+      border-radius: 6px;
+      z-index: 998;
       font-family: 'Inter', sans-serif;
     }
 
-    body {
-      background-color: var(--background-color);
-      color: var(--text-color);
-      min-height: 100vh;
-      padding: 2rem 1rem;
-      font-size: 12px;
+    .dev-credit-subtle a {
+      color: #f9c92d;
+      text-decoration: none;
+      font-weight: 1000;
     }
 
-    body::before {
-      content: '';
+    .dev-credit-subtle a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 480px) {
+      .dev-credit-subtle {
+        font-size: 0.95rem;
+        padding: 3px 6px;
+      }
+    }
+
+    .scroll-top {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.0&auto=format&fit=crop&w=1470&q=80');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.08;
-      z-index: -1;
-    }
-
-    .title,
-    h1,
-    .description,
-    form {
-      text-align: center;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    .title {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--highlight-color);
-      margin-bottom: 0.3rem;
-    }
-
-    h1 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-    }
-
-    .description {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-      text-align: left;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-size: 0.8rem;
-      color: var(--text-color);
-      opacity: 0.9;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 0.6rem 0.9rem;
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 6px;
-      color: var(--text-color);
-      font-size: 0.85rem;
-      transition: all 0.3s ease;
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--highlight-color);
-      box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.3);
-    }
-
-    .register-btn {
-      background-color: var(--highlight-color);
-      color: var(--primary-color);
-      border: none;
-      padding: 0.8rem 1.2rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border-radius: 6px;
+      bottom: 60px;
+      right: 12px;
+      background: #FFD94D;
+      color: #000;
+      padding: 10px 14px;
+      border-radius: 50%;
+      font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
-      margin-top: 1rem;
+      display: none;
+      z-index: 998;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .scroll-top:hover {
+      background: #FFC34E;
     }
 
-    .register-btn:hover {
-      background-color: #e86e00;
-      transform: translateY(-2px);
+    .lang-toggle {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-  <div class="title">Music Streaming Platform</div>
-  <h1>Nuvia Music Streaming</h1>
-  <p class="description">Your favourite music, all in one place.</p>
 
-  <form id="signupForm">
-    <div class="form-group">
-      <label for="fullname">Fullname</label>
-      <input type="text" id="fullname" class="form-control" required />
+  <header>
+    <div class="logo">WorkWave</div>
+    <nav>
+      <a href="#how-it-works">Packages</a>
+      <a href="/signup">Register</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Your Daily Earnings, Simplified</h1>
+    <p>Choose a package, complete simple daily tasks, and earn consistent income effortlessly. It’s that easy.</p>
+    <button onclick="location.href='/signup'">Get Started</button>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <h2>WorkWave Packages</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>ICON PACKAGE - ₦10,000</h3>
+        <ul style="text-align:left">
+          <li>🎉 Welcome Bonus: ₦9,000</li>
+          <li>🤖 AI Automation: ₦600</li>
+          <li>📅 Daily Bonus Claim: ₦100</li>
+          <li>🧠 NFT Mint Task: ₦500</li>
+          <li>📸 Snap & Earn: ₦3,000</li>
+          <li>🎓 Guildline Bonus: ₦9,000</li>
+          <li>🛠️ Auto Guildline: ₦100</li>
+        </ul>
+        <p><strong>Earn up to ₦1,200 Daily</strong></p>
+      </div>
+      <div class="feature">
+        <h3>TITAN PACKAGE - ₦20,000</h3>
+        <ul style="text-align:left">
+          <li>🎉 Welcome Bonus: ₦20,000</li>
+          <li>🤖 AI Automation: ₦2,500</li>
+          <li>📅 Daily Bonus Claim: ₦500</li>
+          <li>🧠 NFT Mint Task: ₦2,000</li>
+          <li>📸 Snap & Earn: ₦3,000</li>
+          <li>🎓 Guildline Bonus: ₦17,000</li>
+          <li>🛠️ Auto Guildline: ₦500</li>
+        </ul>
+        <p><strong>Earn up to ₦5,000 Daily</strong></p>
+      </div>
     </div>
+    <a href="/signup" class="register-button">Register Now</a>
+  </section>
 
-    <div class="form-group">
-      <label for="username">Preferred Username</label>
-      <input type="text" id="username" class="form-control" required />
+  <section class="section">
+    <h2>Why Choose WorkWave?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Flexible Tasks</h3>
+        <p>Complete tasks on your schedule. No pressure, just daily rewards.</p>
+        <img src="./assets/images/IMG_20250711_233013_425.jpg" alt="Flexible online tasks for Nigerians">
+      </div>
+      <div class="feature">
+        <h3>Real Earnings, Fast Payouts</h3>
+        <p>Withdraw your earnings daily once you hit ₦20,000 — no hidden conditions.</p>
+        <img src="./assets/images/IMG_20250711_233121_430.jpg" alt="Daily income and payouts">
+      </div>
     </div>
+    <a href="/signup" class="register-button">Register Now</a>
+  </section>
 
-    <div class="form-group">
-      <label for="Email">Email</label>
-      <input type="Email" id="Email" class="form-control" required />
+  <section class="section">
+    <h2>Success Stories</h2>
+    <div id="testimonial-rotator">
+      <div class="testimonial active"><strong>Chidera – Lagos</strong><br>Earned ₦45,000 in her first week with the Titan package. “It’s fast and real!”</div>
+      <div class="testimonial"><strong>Emmanuel – Abuja</strong><br>Withdraws ₦20,000 every 4 days. “Zero stress. Daily bonuses are my favorite!”</div>
+      <div class="testimonial"><strong>Grace – Port Harcourt</strong><br>Started with Icon, upgraded to Titan. “The growth is real.”</div>
+      <div class="testimonial"><strong>Timi – Ibadan</strong><br>Earned ₦30,000 within 6 days. “Just tasks and steady pay.”</div>
+      <div class="testimonial"><strong>Ada – Enugu</strong><br>Used first payout to sort bills. “So grateful I joined.”</div>
+      <div class="testimonial"><strong>Joseph – Benin</strong><br>Titan helped me replace my 9-5 salary. “No joke.”</div>
     </div>
+    <a href="/signup" class="register-button">Register Now</a>
+  </section>
 
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" class="form-control" required />
-    </div>
+  <section class="cta-section" id="register">
+    <h3>Ready to Earn Daily?</h3>
+    <p>Select a package, start small or go big. Your earnings start from day one.</p>
+    <a href="/signup">Register Now</a>
+  </section>
 
-    <button type="submit" class="register-btn">Register Now</button>
-  </form>
+  <div class="dev-credit-subtle">
+  <small>Built by <strong>Nexa Tech Solutions. For web dev services</strong> <br/><a href="https://wa.me/2348135137369?text=Hi%2C%20I%27m%20interested%20in%20getting%20a%20website%20like%20this.%20Let%27s%20talk." target="_blank">Click here to reach us.!</a></small>
+</div>
+
+
+  <div class="lang-toggle" onclick="toggleLang()">🇳🇬 EN</div>
+  <div class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</div>
+
+  <footer>
+    &copy; 2025 WorkWave. All rights reserved.
+  </footer>
 
   <script>
-    document.getElementById('signupForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      window.location.href = 'payment.html';
+    const testimonials = document.querySelectorAll('.testimonial');
+    let current = 0;
+    setInterval(() => {
+      testimonials[current].classList.remove('active');
+      current = (current + 1) % testimonials.length;
+      testimonials[current].classList.add('active');
+    }, 8000);
+
+    // Scroll button logic
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('scrollTopBtn');
+      if (window.scrollY > 300) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
     });
+
+    // Language toggle (basic example)
+    let langEn = true;
+    function toggleLang() {
+      langEn = !langEn;
+      document.querySelector('.hero h1').innerText = langEn ? 'Your Daily Earnings, Simplified' : 'Ribatar Ku ta Kullum, Mai Sauki';
+      document.querySelector('.hero p').innerText = langEn ? 'Choose a package, complete simple daily tasks, and earn consistent income effortlessly. It’s that easy.' : 'Zaɓi fakiti, kammala ayyuka na yau da kullum, kuma sami kuɗi cikin sauƙi.';
+      document.querySelector('.lang-toggle').innerText = langEn ? '🇳🇬 EN' : '🇳🇬 HA';
+    }
   </script>
 </body>
 </html>
