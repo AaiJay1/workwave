@@ -157,36 +157,6 @@
       color: #A88DCB;
     }
 
-    .dev-credit-subtle {
-      position: fixed;
-      bottom: 22px;
-      left: 10px;
-      background: rgba(255, 255, 255, 0.06);
-      color: #bbb;
-      padding: 4px 8px;
-      font-size: 0.72rem;
-      border-radius: 6px;
-      z-index: 998;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .dev-credit-subtle a {
-      color: #f9c92d;
-      text-decoration: none;
-      font-weight: 1000;
-    }
-
-    .dev-credit-subtle a:hover {
-      text-decoration: underline;
-    }
-
-    @media screen and (max-width: 480px) {
-      .dev-credit-subtle {
-        font-size: 0.95rem;
-        padding: 3px 6px;
-      }
-    }
-
     .scroll-top {
       position: fixed;
       bottom: 60px;
@@ -222,6 +192,31 @@
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; }
     }
+
+    .powered-by-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #FEE440;
+  color: #3B0A64;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 11px;
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.15);
+  text-align: center;
+  text-decoration: none;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  line-height: 1.2;
+}
+
+.powered-by-btn:hover {
+  background: #FF1FB0;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 111, 200, 0.4);
+}
   </style>
 </head>
 <body>
@@ -309,13 +304,13 @@
     <a href="/signup">Register Now</a>
   </section>
 
-  <div class="dev-credit-subtle">
-  <small>Built by <strong>Nexa Tech Solutions. For web dev services</strong> <br/><a href="https://wa.me/2348135137369?text=Hi%2C%20I%27m%20interested%20in%20getting%20a%20website%20like%20this.%20Let%27s%20talk." target="_blank">Click here to reach us.!</a></small>
-</div>
-
-
   <div class="lang-toggle" onclick="toggleLang()">🇳🇬 EN</div>
   <div class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</div>
+
+  <!-- Floating Powered By Button -->
+<a href="https://josephaaijay.vercel.app" class="powered-by-btn" target="_blank" title="Visit Nexa by AaiJay">
+  <small>Powered by<br><strong>NexaTech</strong></small>
+</a>
 
   <footer>
     &copy; 2025 WorkWave. All rights reserved.
